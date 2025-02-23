@@ -1,0 +1,719 @@
+{
+	"info": {
+		"_postman_id": "39bde61e-4dab-47d9-ac59-9ed840f8c8ca",
+		"name": "Tour-Travel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38675905"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Michael Brown\",\r\n    \"age\": 35,\r\n    \"email\": \"michael.brown@example.com\",\r\n    \"password\": \"anotherPassword789\",\r\n    \"photo\": \"path/to/photo4.jpg\",\r\n    \"role\": \"user\",\r\n    \"userStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/create-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"create-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtaWx5LmRhdmlzQGV4YW1wbGUuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MzY2OTY2NjAsImV4cCI6MTczNjc4MzA2MH0.p1Eb4wBjOq30fABaQcUD6IMidEafD8xLjlA-vrLE8Ck",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/676e2f8c18c3442a8353d892",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"676e2f8c18c3442a8353d892"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/67820081e442b5eb13bacd15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"67820081e442b5eb13bacd15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleted user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/676e30fbd2fab565eecdeaff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"676e30fbd2fab565eecdeaff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour",
+			"item": [
+				{
+					"name": "Create Tour",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Serengeti Adventure\",\r\n    \"duration\": 10,\r\n    \"rating\": 4.8,\r\n    \"price\": 2799,\r\n    \"coverImage\": \"https://example.com/images/serengeti_adventure.jpg\",\r\n    \"images\": [\r\n        \"https://example.com/images/serengeti_1.jpg\",\r\n        \"https://example.com/images/serengeti_2.jpg\",\r\n        \"https://example.com/images/serengeti_3.jpg\"\r\n    ],\r\n    \"startDate\": [\r\n        \"2025-01-15T00:00:00.000Z\",\r\n        \"2025-01-20T00:00:00.000Z\",\r\n        \"2025-02-05T00:00:00.000Z\"\r\n    ],\r\n    \"startLocation\": \"Arusha, Tanzania\",\r\n    \"locations\": [\r\n        \"Serengeti National Park\",\r\n        \"Ngorongoro Crater\",\r\n        \"Lake Manyara\"\r\n    ],\r\n    \"slug\": \"serengeti-adventure\",\r\n    \"availableSeats\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/create-tour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"create-tour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"duration\": 11,\r\n    \"ratint\": 4.7,\r\n    \"price\": 2000\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/676ed1d33481d71e68821a1a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"676ed1d33481d71e68821a1a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all tour",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								""
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Arusha",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Serengeti Adventure",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "price",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "field",
+									"value": "name,price,rating,availableSeats",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single tour",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/676ee49031f3f2de57b78715",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"676ee49031f3f2de57b78715"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tour",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/676ed0c33481d71e68821a0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"676ed0c33481d71e68821a0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "next schedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tours/schedule/676ee49031f3f2de57b78715",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"schedule",
+								"676ee49031f3f2de57b78715"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "create booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"6773cb86b6dcc20f7cdb8139\",\r\n    \"tour\": \"6773cb92b6dcc20f7cdb813b\",\r\n    \"bookedSlorts\": 2\r\n    // \"bookingStatus\": \"pending\",\r\n    // \"totalPrice\": 150.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/bookings/create-booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								"create-booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update booking",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"user\": \"6773cb86b6dcc20f7cdb8139\",\r\n    // \"tour\": \"6773cb92b6dcc20f7cdb813b\",\r\n    \"bookedSlorts\": 6\r\n    // \"bookingStatus\": \"pending\",\r\n    // \"totalPrice\": 150.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/bookings/67740b55500a28f5c5b13eed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								"67740b55500a28f5c5b13eed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/bookings/67740b55500a28f5c5b13eed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								"67740b55500a28f5c5b13eed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single booking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/bookings/67741464f96eda1f4e882b32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								"67741464f96eda1f4e882b32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all booking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/bookings/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"bookings",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ali sarkar\",\r\n    // \"age\": 28,\r\n    \"email\": \"aliasarkar101@gmail.com\",\r\n    \"password\": \"123456\"\r\n    // \"photo\": \"path/to/photo5.jpg\",\r\n    // \"role\": \"user\",\r\n    // \"userStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auths/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auths",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aliasarkar101@gmail.com\",\r\n    \"password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auths/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auths",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"aliasarkar101@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auths/forget-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auths",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"678f43c3b1065149bad8c40f\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWFzYXJrYXIxMDFAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3Mzc0NDIyODksImV4cCI6MTczNzQ0NTg4OX0.WPMImGt26vca72jnENVlgi2y7V-1GzLTvq-OMSKNJvQ\",\r\n    \"password\": \"1234567\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auths/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auths",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
