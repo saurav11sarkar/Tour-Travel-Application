@@ -143,7 +143,7 @@ If you have any questions or need further assistance, feel free to reach out:
 2. Added **GitHub Repository Link** under the **GitHub Repository** section.
 3. Both links are clearly labeled and easy to find.
 
-Replace the placeholders (`https://tour-traval.vercel.app/` and `https://github.com/your-username/tour-travel-app`) with your actual deployment and repository URLs. This will make it easy for users to access the live server and explore the codebase.
+Replace the placeholders (`https://tour-traval.vercel.app/` and `https://github.com/saurav11sarkar/Tour-Travel-Application`) with your actual deployment and repository URLs. This will make it easy for users to access the live server and explore the codebase.
 
 ### Example User Object
 
